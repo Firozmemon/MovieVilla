@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hGuideLine35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vGuideLine05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vGuideLine95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <ImageView
+            android:id="@+id/img_movie_banner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/hGuideLine35"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/img_movie_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_movie_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/ic_bookmark_empty"
+            android:scaleType="fitXY"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_movie_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textColor="#333"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/hGuideLine35"
+            tools:text="Sample Movie title" />
+
+        <TextView
+            android:id="@+id/txt_movie_tagline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="#333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_name"
+            tools:text="Sample Movie tagline" />
+
+        <LinearLayout
+            android:id="@+id/lnr_movie_release_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_tagline">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="12dp"
+                android:text="Release Date:"
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_movie_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#333"
+                android:textSize="14sp"
+                tools:text="2020-12-16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnr_movie_genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_movie_release_date">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="12dp"
+                android:text="Genre:"
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/rv_item_genre" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_movie_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Overview:"
+            android:textColor="#333"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_movie_genre" />
+
+        <TextView
+            android:id="@+id/txt_movie_overview_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#222"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@+id/vGuideLine05"
+            app:layout_constraintRight_toRightOf="@+id/vGuideLine95"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_overview"
+            tools:text="Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
